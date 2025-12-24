@@ -2,17 +2,9 @@ name: 'Upload BOM to Dependency-Track'
 author: Patrick Dwyer
 description: 'Uploads a CycloneDX software bill of materials to a Dependency-Track server'
 inputs:
-  serverhostname:
-    description: 'Dependency-Track hostname'
+  serverUrl:
+    description: 'Dependency-Track server URL (e.g. https://dependency-track.example.com:port/api/v1/bom)'
     required: true
-  port:
-    description: 'Dependency-Track port'
-    required: false
-    default: '443'
-  protocol:
-    description: 'Dependency-Track protocol'
-    required: false
-    default: 'https'
   apikey:
     description: 'Dependency-Track API key'
     required: true
@@ -31,6 +23,10 @@ inputs:
     required: false
   autocreate:
     description: "Automatically create the project in Dependency-Track if it doesn't exist"
+    default: 'false'
+    required: false
+  isLatestProjectVersion:
+    description: 'Set the project version to the latest version in Dependency-Track'
     default: 'false'
     required: false
   bomfilename:
