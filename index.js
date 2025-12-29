@@ -14,7 +14,7 @@ async function run() {
     const parent = core.getInput('parent');
     const parentName = core.getInput('parentname');
     const parentVersion = core.getInput('parentversion');
-    const isLatestProjectVersion = core.getInput('isLatestProjectVersion') !== 'true';
+    const isLatestProjectVersion = core.getInput('isLatestProjectVersion') === 'true';
 
     if (project === "" && (projectName === "" || projectVersion === "")) {
       throw 'project or projectName + projectVersion must be set'
